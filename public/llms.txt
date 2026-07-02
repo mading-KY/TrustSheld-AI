@@ -1,0 +1,8 @@
+# TrustShield AI
+
+> AI-powered fraud prevention and digital trust platform for East Africa. Analyzes SMS, emails, and URLs and returns an explainable verdict (Safe, Suspicious, or High Risk) with confidence and recommended actions.
+
+TrustShield AI is built for the EACA Summit 2026 Hackathon, Track 02 (Fraud Prevention & Trust). It focuses on phishing, SIM-swap, Business Email Compromise (BEC), and social engineering, and follows responsible AI governance: explainable outputs, honest confidence scores, human-in-the-loop, and minimal data retention.
+
+## Pages
+- [Home](/): product overview, features, AI governance principles, call to action.
