@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      analyses: {
+        Row: {
+          classification: Database["public"]["Enums"]["threat_classification"]
+          confidence: number
+          content: string
+          content_type: Database["public"]["Enums"]["content_type_enum"]
+          created_at: string
+          explanation: string
+          id: string
+          indicators: Json
+          recommendations: Json
+          user_id: string
+        }
+        Insert: {
+          classification: Database["public"]["Enums"]["threat_classification"]
+          confidence: number
+          content: string
+          content_type: Database["public"]["Enums"]["content_type_enum"]
+          created_at?: string
+          explanation: string
+          id?: string
+          indicators?: Json
+          recommendations?: Json
+          user_id: string
+        }
+        Update: {
+          classification?: Database["public"]["Enums"]["threat_classification"]
+          confidence?: number
+          content?: string
+          content_type?: Database["public"]["Enums"]["content_type_enum"]
+          created_at?: string
+          explanation?: string
+          id?: string
+          indicators?: Json
+          recommendations?: Json
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +61,8 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      content_type_enum: "sms" | "email" | "url" | "other"
+      threat_classification: "safe" | "suspicious" | "high_risk"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +189,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      content_type_enum: ["sms", "email", "url", "other"],
+      threat_classification: ["safe", "suspicious", "high_risk"],
+    },
   },
 } as const
